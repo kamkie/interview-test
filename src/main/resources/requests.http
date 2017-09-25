@@ -1,0 +1,3 @@
+## list all
+GET http://localhost:8090/api/product
+Accept: application/json
