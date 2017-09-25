@@ -1,3 +1,7 @@
-## list all
+### list all
 GET http://localhost:8090/api/product
+Accept: application/json
+
+### value of products
+GET http://localhost:8090/api/productValue
 Accept: application/json
