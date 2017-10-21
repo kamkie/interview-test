@@ -13,7 +13,7 @@ public class Product {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Category category;
 	private String name;
 	private String brand;

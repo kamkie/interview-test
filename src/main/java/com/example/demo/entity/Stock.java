@@ -3,10 +3,7 @@ package com.example.demo.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -15,7 +12,7 @@ public class Stock {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JsonBackReference
 	private Product product;
 	private Long qty;

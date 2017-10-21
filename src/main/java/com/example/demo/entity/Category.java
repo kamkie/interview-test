@@ -12,6 +12,6 @@ public class Category {
 	@GeneratedValue
 	private Long id;
 	private String name;
-	@ManyToOne(optional = true, fetch = FetchType.EAGER)
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	private Category parent;
 }

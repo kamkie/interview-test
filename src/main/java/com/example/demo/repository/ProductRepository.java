@@ -11,4 +11,11 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
 	@Query("select p.id as id, p.name as name, p.brand as brand, p.price * s.qty as value from Product p join p.stock s")
 	List<ProductValue> calculateValueOfProducts();
+
+	@Override
+	@Query("select p from Product p " +
+		"join fetch p.category c " +
+		"join fetch p.stock " +
+		"join fetch c.parent")
+	List<Product> findAll();
 }
